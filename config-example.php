@@ -6,4 +6,6 @@ define('API_VERSION','1.1');
 define('DEBUG',FALSE);
 define('DOLOG',FALSE);
 define('COMPRESS',FALSE);
+define('CHAIN',TRUE);
+define('PROXY','localhost:1600');
 ?>
