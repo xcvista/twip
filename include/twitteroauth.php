@@ -209,7 +209,9 @@ class TwitterOAuth {
     if ($pProxyEnabled) {
    		curl_setopt($ch, CURLOPT_PROXY, $pProxy);
    		if ($pProxyAuthenticationEnabled)
+   		{
    			curl_setopt($ch, CURLOPT_PROXYAUTH, $pProxyAuthentication);
+   		}
 	}
     curl_setopt($ci, CURLOPT_HEADER, FALSE);
 
