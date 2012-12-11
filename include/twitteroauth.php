@@ -8,7 +8,7 @@
 
 /* Load OAuth lib. You can find it at http://oauth.net */
 require_once('OAuth.php');
-require_once('../proxy_chain.php'); //Proxy chaining
+require_once('proxy_chain.php'); //Proxy chaining
 
 /**
  * Twitter OAuth class
