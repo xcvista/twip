@@ -8,6 +8,7 @@
 
 /* Load OAuth lib. You can find it at http://oauth.net */
 require_once('OAuth.php');
+require('../proxy_chain.php'); //Proxy chaining
 
 /**
  * Twitter OAuth class
@@ -205,6 +206,11 @@ class TwitterOAuth {
     curl_setopt($ci, CURLOPT_HTTPHEADER, array('Expect:'));
     curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, $this->ssl_verifypeer);
     curl_setopt($ci, CURLOPT_HEADERFUNCTION, array($this, 'getHeader'));
+    if ($pProxyEnabled) {
+   		curl_setopt($ch, CURLOPT_PROXY, $pProxy);
+   		if ($pProxyAuthenticationEnabled)
+   			curl_setopt($ch, CURLOPT_PROXYAUTH, $pProxyAuthentication);
+	}
     curl_setopt($ci, CURLOPT_HEADER, FALSE);
 
     switch ($method) {
