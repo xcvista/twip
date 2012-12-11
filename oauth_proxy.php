@@ -4,6 +4,7 @@ session_start();
  * @author tifan
  */
 include('include/simple_html_dom.php'); 
+require('proxy_chain.php');
 /* Credit: */
 
 if(isset($_SESSION['oauth_proxy'])){
