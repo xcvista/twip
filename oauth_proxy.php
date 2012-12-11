@@ -57,11 +57,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, $ckfile);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, count($login_fields));
 curl_setopt($ch, CURLOPT_POSTFIELDS, $login_string);
-if ($pProxyEnabled) {
-   	curl_setopt($ch, CURLOPT_PROXY, $pProxy);
-   	if ($pProxyAuthenticationEnabled)
-   		curl_setopt($ch, CURLOPT_PROXYAUTH, $pProxyAuthentication);
-}
+curl_setopt($ch, CURLOPT_PROXY, $pProxy);
 $login_result = curl_exec($ch);
 curl_close($ch);
 $login_obj = str_get_html($login_result);

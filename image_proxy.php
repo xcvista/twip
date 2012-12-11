@@ -24,11 +24,7 @@ function imageUpload($oauth_key, $oauth_secret, $token) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Auth-Service-Provider: '.$signingurl,'X-Verify-Credentials-'.$header)); 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    if ($pProxyEnabled) {
-    	curl_setopt($ch, CURLOPT_PROXY, $pProxy);
-    	if ($pProxyAuthenticationEnabled)
-    		curl_setopt($ch, CURLOPT_PROXYAUTH, $pProxyAuthentication);
-    }
+    curl_setopt($ch, CURLOPT_PROXY, $pProxy);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 
